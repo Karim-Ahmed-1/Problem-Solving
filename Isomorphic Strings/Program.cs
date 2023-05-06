@@ -2,9 +2,9 @@
 {
     internal class Program
     {
-        /*
-        1 <= s.length <= 5 * 104
-t.length == s.length*/
+                /*
+                1 <= s.length <= 5 * 104
+        t.length == s.length*/
         public static bool IsIsomorphic(string s, string t)
         {
             if (s.Length >= 1 || s.Length <= 10000)
@@ -59,6 +59,24 @@ t.length == s.length*/
                 }
             }
             return false;
+            /*Another Solution found online
+                     Dictionary<char,char> isoList=new Dictionary<char,char>();
+                    for(int i=0;i<s.Length;i++)
+                    {
+                        if(isoList.ContainsKey(s[i]))
+                        {
+                            if(isoList[s[i]]!=t[i])
+                                return false;
+                        }
+                        else
+                        {
+                            if(isoList.ContainsValue(t[i]))
+                                return false;
+                            isoList.Add(s[i],t[i]);
+                        }
+                    }
+                    return true;
+             */
 
         }
         static void Main(string[] args)
